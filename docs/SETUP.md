@@ -47,9 +47,11 @@ git submodule update --init --recursive
 HarfBuzz-Android-Build/
 ├── libs/
 │   ├── arm64-v8a/
-│   │   └── libharfbuzz.a
+│   │   ├── libharfbuzz.a
+│   │   └── libharfbuzz-subset.a
 │   └── armeabi-v7a/
-│       └── libharfbuzz.a
+│       ├── libharfbuzz.a
+│       └── libharfbuzz-subset.a
 ├── build/
 │   ├── arm64-v8a/
 │   └── armeabi-v7a/
