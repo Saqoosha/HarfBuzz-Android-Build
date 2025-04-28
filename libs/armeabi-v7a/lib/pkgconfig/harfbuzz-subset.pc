@@ -1,0 +1,12 @@
+prefix=/home/ubuntu/repos/HarfBuzz-Android-Build/libs/armeabi-v7a
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: harfbuzz subsetter
+Description: HarfBuzz font subsetter
+Version: 11.1.0
+
+Requires: harfbuzz = 11.1.0
+Libs: -L${libdir} -lharfbuzz-subset
+Cflags: -I${includedir}/harfbuzz
