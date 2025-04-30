@@ -105,3 +105,48 @@ HarfBuzzのヘッダーファイルは `libs/[ABI]/include/harfbuzz/` ディレ�
 - `NDK_VERSION`: 使用するAndroid NDKのバージョン
 - `ANDROID_API_LEVEL`: ターゲットとするAndroid APIレベル
 - `ABIS`: ビルドするABIのリスト
+
+## macOS arm64 ビルドセットアップ
+
+macOS 15 arm64アーキテクチャ向けの静的ライブラリをビルドするには、以下の手順を実行してください。
+
+### 必要条件
+
+- macOS環境（arm64またはIntel with Rosetta 2）
+- インターネット接続
+- 以下のツール:
+  - Xcode Command Line Tools
+  - CMake (バージョン 3.14 以上)
+  - Bash シェル
+  - Git
+
+### セットアップ手順
+
+1. このリポジトリをクローンします:
+
+```bash
+git clone https://github.com/Saqoosha/HarfBuzz-Android-Build.git
+cd HarfBuzz-Android-Build
+```
+
+2. HarfBuzzのサブモジュールを初期化します:
+
+```bash
+git submodule update --init --recursive
+```
+
+3. macOS arm64向けのビルドスクリプトを実行します:
+
+```bash
+./scripts/build-macos-arm64.sh
+```
+
+ビルドが完了すると、静的ライブラリは `libs/macos-arm64/` ディレクトリに生成されます。
+
+ビルドされたライブラリがarm64アーキテクチャ向けであることを確認するには、以下のコマンドを実行してください:
+
+```bash
+lipo -info libs/macos-arm64/libharfbuzz.a
+```
+
+出力に「arm64」が含まれていることを確認してください。
