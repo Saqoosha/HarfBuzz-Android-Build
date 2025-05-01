@@ -9,6 +9,8 @@ HarfBuzzライブラリのAndroidアプリケーション用静的ライブラ�
 - arm64-v8a
 - armeabi-v7a
 
+また、macOS 15 arm64向けのビルドスクリプトも含まれています。
+
 ## 使用方法
 
 詳細なセットアップと使用方法については、[セットアップガイド](docs/SETUP.md)を参照してください。
@@ -23,8 +25,11 @@ cd HarfBuzz-Android-Build
 # サブモジュールを初期化
 git submodule update --init --recursive
 
-# ビルドスクリプトを実行
+# Android向けビルドスクリプトを実行
 ./scripts/build.sh
+
+# macOS arm64向けビルドスクリプトを実行（macOSのみ）
+./scripts/build-macos-arm64.sh
 ```
 
 ビルドが完了すると、静的ライブラリは `libs/[ABI]/` ディレクトリに生成されます。
